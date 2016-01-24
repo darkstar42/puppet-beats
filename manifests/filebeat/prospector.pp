@@ -13,6 +13,8 @@ define beats::filebeat::prospector(
   $backoff_factor        = undef,
   $partial_line_waiting  = undef,
   $force_close_files     = false,
+  $fields_under_root     = undef,
+  $document_type         = undef,
 ){
   concat::fragment {"prospector-${title}":
     target  => '/etc/filebeat/filebeat.yml',
