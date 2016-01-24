@@ -5,6 +5,10 @@ define beats::outputs::logstash (
   $index = $title,
   $worker = 2,
   $loadbalance = false,
+  $enable_tls = false,
+  $tls_ca = undef,
+  $tls_cert = undef,
+  $tls_key = undef,
 ) {
   concat::fragment {"${title}-output-logstash":
     target  => "/etc/${title}/${title}.yml",

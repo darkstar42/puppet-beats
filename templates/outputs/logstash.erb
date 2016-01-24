@@ -3,3 +3,9 @@
     index: <%= @index %>
     worker: <%= @worker %>
     loadbalance: <%= @loadbalance %>
+<%- if @enable_tls -%>
+    tls:
+      certificate_authorities: [ "<%= @tls_ca %>" ]
+      certificate: "<%= @tls_cert %>"
+      certificate_key: "<%= @tls_key %>"
+<%- end -%>
